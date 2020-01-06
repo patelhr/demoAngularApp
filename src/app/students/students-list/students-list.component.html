@@ -1,0 +1,8 @@
+<div *ngFor="let student of students">
+    <mat-card>Name: {{student.firstName}} {{student.lastName}}
+    </mat-card>
+    <hr />
+</div>
+<div *ngIf="!students || students.length === 0">
+    <p>No students exists.</p>
+</div>

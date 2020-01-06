@@ -1,0 +1,17 @@
+<form>
+    <mat-card>
+        <div>
+            <mat-form-field>
+                <input matInput name="firstName" placeholder="First Name" [(ngModel)]="student.firstName" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput name="lastName" placeholder="Last Name" [(ngModel)]="student.lastName" />
+            </mat-form-field>
+        </div>
+        <mat-card-actions>
+            <button mat-raised-button (click)="addStudent()">Add</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

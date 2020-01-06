@@ -1,0 +1,16 @@
+<!-- <app-students-list></app-students-list>
+<app-students-edit></app-students-edit>
+<app-add-student></app-add-student> -->
+<mat-sidenav-container class="student-container">
+    <mat-sidenav mode="side" opened>
+        <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip [routerLink]=" ['list']" routerLinkActive="active">Students list</mat-chip>
+            <mat-chip *ngIf="authService.isLoggedIn" [routerLink]="['add']" routerLinkActive="active">Add Student</mat-chip>
+            <mat-chip *ngIf="authService.isLoggedIn" [routerLink]="['update']" routerLinkActive="active"> Update Students</mat-chip>
+        </mat-chip-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

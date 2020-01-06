@@ -1,0 +1,26 @@
+<form>
+  <div *ngFor="let student of students">
+    <mat-card>
+      <div>
+        <mat-form-field>
+          <input matInput name="firstName" placeholder="First Name" [(ngModel)]="student.firstName" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput name="lastName" placeholder="Last Name" [(ngModel)]="student.lastName" />
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <button mat-raised-button (click)="updateStudentData()">Save</button>
+        <button mat-raised-button (click)="deleteStudent(student.id)">
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <hr />
+  </div>
+  <div *ngIf="!students || students.length === 0">
+    <p>No students exists.</p>
+  </div>
+</form>
